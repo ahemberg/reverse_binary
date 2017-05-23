@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <math.h>
-#include <iterator>
+
 
 using namespace std;
 
@@ -15,7 +14,6 @@ unsigned int num_bits(unsigned int integer) {
 }
 
 vector<int> int_to_bin(unsigned int integer, unsigned int num_bits) {
-
     vector<int> bin(num_bits);
     for (int n = num_bits-1; n>=0; n--) {
         if (pow(2,n) <= integer) {
@@ -41,7 +39,6 @@ unsigned int bin_to_int(vector<int> bin_rep) {
 }
 
 int main() {
-
     unsigned int input, bits, reversed_int;
 
     cin >> input;
@@ -50,22 +47,17 @@ int main() {
     reverse(begin(binary), end(binary));
     reversed_int = bin_to_int(binary);
 
-
     cout << endl << "Binary representation:" << endl;
 
     for (vector<int>::iterator it = binary.begin(); it!=binary.end(); it++) {
        cout << *it;
     }
-
     cout << endl << "Reverse binary representation:" << endl;
 
     for (vector<int>::reverse_iterator it = binary.rbegin(); it!=binary.rend(); it++) {
         cout << *it;
     }
-
     cout << endl << "Reverse int: " << reversed_int << endl;
-
-
 
     return 0;
 }
